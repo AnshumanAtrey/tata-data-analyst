@@ -1,0 +1,55 @@
+Mini Project Submission Guidelines – Business Studies with Applied AI
+Inbox
+
+Dr. Aarti Shailendrasingh Pardeshi (Assistant Professor-HOD-Computer Science, Kharghar)
+Attachments
+Feb 24, 2026, 7:01 PM (2 days ago)
+to elonmusk2024
+
+Dear Students,
+
+As discussed in class, each group is required to complete and submit the mini project as per the following structured deliverables. Please ensure that all components are properly organised and professionally presented.
+
+1. Google Colab Notebook
+Your notebook must clearly include:
+
+Data Cleaning and Preprocessing
+
+Exploratory Data Analysis (EDA)
+
+Implementation of K-Means Algorithm
+
+Implementation of the Logistic Regression Model
+
+Clear Business Interpretation of Results (linking findings to economic and financial concepts such as demand-supply, revenue optimization, pricing strategy, risk analysis, etc.)
+
+2. GitHub Repository
+Each group must create a well-structured GitHub repository containing:
+
+Complete Project Code
+
+A detailed README file including:
+
+Business Problem Statement
+
+Economic Concepts Applied
+
+AI Techniques Used
+
+Dataset Link
+
+Screenshots of Outputs and Model Results
+
+3. Deployment (Mandatory)
+You must deploy your project using Streamlit, Netlify, or any similar platform. The deployed application should include:
+
+An interactive dashboard
+
+A functional prediction interface (Revenue / Demand / Fraud / Pricing / Risk as per your project)
+
+Clear input-output demonstration
+
+Kindly ensure that your project reflects both business understanding and technical implementation. Proper documentation and interpretation will carry significant weight in the evaluation.
+
+Presentation Schedule:
+The project presentations will be conducted on 27th February from 2:00 PM onwards. All groups must be present and ready with their deployed application and GitHub repository for demonstration.
