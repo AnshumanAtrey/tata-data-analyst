@@ -305,11 +305,14 @@ GLOBAL_CSS = """
         overflow: hidden;
         border: 1px solid #e5e7eb;
     }
+    stButton {
+        padding-left: 20px;
+    }
     .stButton > button[kind="primary"] {
         background-color: #171717 !important;
         color: #ffffff !important;
         border: none !important;
-        border-radius: 8px !important;
+        border-radius: 30px !important;
         font-weight: 500 !important;
     }
     .stButton > button[kind="primary"]:hover {
@@ -326,7 +329,7 @@ GLOBAL_CSS = """
         border: none !important;
     }
 
-    /* Hide all toolbar items EXCEPT the sidebar expand button */
+    /* Hide toolbar */
     [data-testid="stToolbar"] {
         background: transparent !important;
         border: none !important;
@@ -335,30 +338,16 @@ GLOBAL_CSS = """
     [data-testid="stToolbar"] * {
         visibility: hidden !important;
     }
+
+    /* Hide sidebar toggle buttons */
     button[data-testid="stExpandSidebarButton"],
-    button[data-testid="stExpandSidebarButton"] * {
-        visibility: visible !important;
-    }
-    button[data-testid="stExpandSidebarButton"] {
-        background: #f5f5f5 !important;
-        border: 1px solid #e5e7eb !important;
-        border-radius: 8px !important;
-    }
-    button[data-testid="stExpandSidebarButton"]:hover {
-        background: #e5e7eb !important;
+    button[data-testid="stSidebarCollapseButton"] {
+        display: none !important;
     }
 
-    /* Always show collapse button in sidebar (not just on hover) */
-    button[data-testid="stSidebarCollapseButton"] {
-        opacity: 1 !important;
-        visibility: visible !important;
-        background: #f5f5f5 !important;
-        border: 1px solid #e5e7eb !important;
-        border-radius: 8px !important;
-        color: #525252 !important;
-    }
-    button[data-testid="stSidebarCollapseButton"]:hover {
-        background: #e5e7eb !important;
+    /* Hide sidebar entirely */
+    section[data-testid="stSidebar"] {
+        display: none !important;
     }
 </style>
 """
