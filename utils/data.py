@@ -61,12 +61,8 @@ def train_models(_rfm):
 
 
 def fmt_currency(v):
-    if v >= 1e6: return f"£{v/1e6:,.1f}M"
-    if v >= 1e3: return f"£{v/1e3:,.1f}K"
-    return f"£{v:,.2f}"
+    return f"£{v:,.0f}"
 
 
 def fmt_num(v):
-    if v >= 1e6: return f"{v/1e6:,.1f}M"
-    if v >= 1e3: return f"{v/1e3:,.0f}K"
-    return f"{v:,.0f}"
+    return f"{v:,}"

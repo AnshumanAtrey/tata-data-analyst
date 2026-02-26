@@ -4,7 +4,7 @@
 
 A data-driven analysis of TATA's online retail store to identify what drives revenue, segment customers into actionable groups, and predict customer value using machine learning.
 
-**Live App:** [Streamlit Dashboard](#) _(link to be added after deployment)_
+**Live App:** [Streamlit Dashboard](https://tata-analyst.streamlit.app)
 
 ---
 
@@ -298,8 +298,8 @@ In practice: open the app once before presenting. After that, anyone who visits 
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/tata-retail-analysis.git
-cd tata-retail-analysis
+git clone https://github.com/AnshumanAtrey/tata-data-analyst.git
+cd tata-data-analyst
 
 # Install dependencies
 pip install -r requirements.txt

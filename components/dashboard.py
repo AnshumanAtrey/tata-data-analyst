@@ -4,8 +4,17 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
-from utils.config import CHART_LAYOUT, C_PRIMARY, C_SECONDARY, COUNTRY_CODES
+from utils.config import CHART_LAYOUT, C_PRIMARY, C_SECONDARY, COUNTRY_CODES, KPI_ICONS, KPI_COLORS
 from utils.data import fmt_currency, fmt_num
+
+
+def _kpi(key, label, value):
+    icon = KPI_ICONS[key]
+    fg, bg = KPI_COLORS[key]
+    return f'''<div class="kpi-card">
+        <div class="kpi-icon" style="background:{bg};color:{fg};">{icon}</div>
+        <div><div class="kpi-label">{label}</div><div class="kpi-value">{value}</div></div>
+    </div>'''
 
 
 def render(df):
@@ -16,11 +25,16 @@ def render(df):
     avg_order = df.groupby("InvoiceNo")["TotalRevenue"].sum().mean()
 
     c1, c2, c3, c4, c5 = st.columns(5)
-    c1.metric("Total Revenue", fmt_currency(total_revenue))
-    c2.metric("Customers", fmt_num(total_customers))
-    c3.metric("Orders", fmt_num(total_orders))
-    c4.metric("Products", fmt_num(total_products))
-    c5.metric("Avg Order", fmt_currency(avg_order))
+    with c1:
+        st.markdown(_kpi("revenue", "Total Revenue", fmt_currency(total_revenue)), unsafe_allow_html=True)
+    with c2:
+        st.markdown(_kpi("orders", "Total Orders", fmt_num(total_orders)), unsafe_allow_html=True)
+    with c3:
+        st.markdown(_kpi("customers", "Customers", fmt_num(total_customers)), unsafe_allow_html=True)
+    with c4:
+        st.markdown(_kpi("products", "Products", fmt_num(total_products)), unsafe_allow_html=True)
+    with c5:
+        st.markdown(_kpi("avg_order", "Avg Order", fmt_currency(avg_order)), unsafe_allow_html=True)
 
     st.markdown("")
 

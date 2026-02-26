@@ -114,24 +114,38 @@ GLOBAL_CSS = """
     .stTabs [data-baseweb="tab-highlight"] { display: none; }
     .stTabs [data-baseweb="tab-border"] { display: none; }
 
-    /* ── Metrics ── */
-    div[data-testid="stMetric"] {
+    /* ── KPI Cards ── */
+    .kpi-card {
         background: #ffffff;
         border: 1px solid #e5e7eb;
         border-radius: 12px;
-        padding: 16px 18px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
     }
-    div[data-testid="stMetric"] label {
-        color: #a3a3a3 !important;
+    .kpi-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .kpi-label {
+        font-size: 0.72rem;
+        color: #a3a3a3;
         font-weight: 500;
-        font-size: 0.75rem !important;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.3px;
+        margin-bottom: 2px;
     }
-    div[data-testid="stMetric"] [data-testid="stMetricValue"] {
-        color: #171717 !important;
+    .kpi-value {
+        font-size: 1.25rem;
         font-weight: 700;
-        font-size: 1.5rem !important;
+        color: #171717;
+        line-height: 1.2;
     }
 
     /* ── Cards ── */
@@ -304,14 +318,47 @@ GLOBAL_CSS = """
     hr { border-color: #e5e7eb !important; }
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    /* Hide deploy button */
-    [data-testid="stToolbar"] { display: none !important; }
-    /* Keep header for sidebar toggle but make it minimal */
+
+    /* Transparent header */
     header[data-testid="stHeader"] {
-        height: 2.5rem !important;
-        min-height: 2.5rem !important;
-        background: #fafafa !important;
+        background: transparent !important;
         backdrop-filter: none !important;
+        border: none !important;
+    }
+
+    /* Hide all toolbar items EXCEPT the sidebar expand button */
+    [data-testid="stToolbar"] {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    [data-testid="stToolbar"] * {
+        visibility: hidden !important;
+    }
+    button[data-testid="stExpandSidebarButton"],
+    button[data-testid="stExpandSidebarButton"] * {
+        visibility: visible !important;
+    }
+    button[data-testid="stExpandSidebarButton"] {
+        background: #f5f5f5 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+    }
+    button[data-testid="stExpandSidebarButton"]:hover {
+        background: #e5e7eb !important;
+    }
+
+    /* Always show collapse button in sidebar (not just on hover) */
+    button[data-testid="stSidebarCollapseButton"] {
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: #f5f5f5 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        color: #525252 !important;
+    }
+    button[data-testid="stSidebarCollapseButton"]:hover {
+        background: #e5e7eb !important;
     }
 </style>
 """
